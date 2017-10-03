@@ -11,6 +11,7 @@
     <modules>
         <module>sc-esb-controller</module>
         <module>sc-esb-components</module>
+        <module>sc-esb-common</module>
     </modules>
 
     <properties>
@@ -23,13 +24,35 @@
         <version>1.5.6.RELEASE</version>
     </parent>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-collections4</artifactId>
-            <version>4.1</version>
-        </dependency>
-    </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>4.1</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-beanutils</groupId>
+                <artifactId>commons-beanutils</artifactId>
+                <version>1.9.3</version>
+            </dependency>
+            <dependency>
+                <groupId>sc-esb</groupId>
+                <artifactId>sc-esb-controllers</artifactId>
+                <version>${sc.esb.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>sc-esb</groupId>
+                <artifactId>sc-esb-components</artifactId>
+                <version>${sc.esb.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>sc-esb</groupId>
+                <artifactId>sc-esb-common</artifactId>
+                <version>${sc.esb.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>

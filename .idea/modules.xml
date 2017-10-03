@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/sc-esb.iml" filepath="$PROJECT_DIR$/sc-esb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sc-esb-common/sc-esb-common.iml" filepath="$PROJECT_DIR$/sc-esb-common/sc-esb-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/sc-esb-components/sc-esb-components.iml" filepath="$PROJECT_DIR$/sc-esb-components/sc-esb-components.iml" />
       <module fileurl="file://$PROJECT_DIR$/sc-esb-controller/sc-esb-controller.iml" filepath="$PROJECT_DIR$/sc-esb-controller/sc-esb-controller.iml" />
     </modules>

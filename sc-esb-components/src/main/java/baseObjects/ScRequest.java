@@ -1,12 +1,28 @@
 package baseObjects;
 
-import java.io.Serializable;
-import java.util.concurrent.ConcurrentHashMap;
+import exceptions.BodyCastException;
+import org.apache.commons.beanutils.BeanUtils;
 
-public abstract class ScRequest {
-    private ConcurrentHashMap<String,Object> scopeVars;
+import java.lang.reflect.InvocationTargetException;
 
-    public<T> T getRequestProperty(final String name) {
-        return scopeVars.containsKey(name) ? (T) scopeVars.get(name) : null;
+public abstract class ScRequest extends AbstractScope {
+    private Object body;
+
+    public Object getBody() {
+        return body;
+    }
+
+    public <T> T getBody(final Class<T> caster) throws BodyCastException {
+        try {
+            final T dest = caster.newInstance();
+            BeanUtils.copyProperties(dest, body);
+            return dest;
+        } catch (IllegalAccessException | InstantiationException | InvocationTargetException e) {
+            throw new BodyCastException();
+        }
+    }
+
+    public void setBody(Object body) {
+        this.body = body;
     }
 }
